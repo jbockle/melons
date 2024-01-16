@@ -1,0 +1,15 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/go-postgres
+{
+	"name": "Go & Cosmos NoSQL",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "godev",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"forwardPorts": [
+		8081
+	],
+	"initializeCommand": {
+		"openCosmosExplorer": "start https://localhost:8081/_explorer/index.html"
+	},
+	"postStartCommand": "./.devcontainer/add-cert.sh"
+}
